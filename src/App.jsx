@@ -12,6 +12,13 @@ const App = () => {
         setFaceShowFlag(!faceShowFlag);
     };
 
+    if (num % 3 === 0) {
+        // avoid too many rerendering
+        faceShowFlag || setFaceShowFlag(true);
+    } else {
+        // avoid too many rerendering
+        faceShowFlag && setFaceShowFlag(false);
+    }
 
     return (
         <>
