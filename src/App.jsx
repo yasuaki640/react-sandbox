@@ -1,5 +1,6 @@
 import React from 'react';
 import ColofulMessage from './components/ColofulMessage'
+
 const App = () => {
     const onClickButton = () => alert();
 
