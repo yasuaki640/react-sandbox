@@ -5,7 +5,12 @@ const App = () => {
     const onClickCountUp = () => {
         setNum(num + 1);
     };
+    const onClickSwitchShowFlag = () => {
+        setFaceShowFlag(!faceShowFlag);
+    };
+
     const [num, setNum] = useState(100);
+    const [faceShowFlag, setFaceShowFlag] = useState(true);
 
     return (
         <>
@@ -14,6 +19,9 @@ const App = () => {
             <ColofulMessage color={"pink"}>深淵もまたこちらを除いているのだ</ColofulMessage>
             <button onClick={onClickCountUp}>Count up</button>
             <p>{num}</p>
+            <button onClick={onClickSwitchShowFlag}>on/off</button>
+            {faceShowFlag && <p> ^^) _旦~~</p>}
+
         </>
     );
 };
