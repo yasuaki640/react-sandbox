@@ -2,15 +2,16 @@ import React, {useState} from 'react';
 import ColofulMessage from './components/ColofulMessage'
 
 const App = () => {
+    const [num, setNum] = useState(100);
     const onClickCountUp = () => {
         setNum(num + 1);
     };
+
+    const [faceShowFlag, setFaceShowFlag] = useState(true);
     const onClickSwitchShowFlag = () => {
         setFaceShowFlag(!faceShowFlag);
     };
 
-    const [num, setNum] = useState(100);
-    const [faceShowFlag, setFaceShowFlag] = useState(true);
 
     return (
         <>
@@ -21,7 +22,6 @@ const App = () => {
             <p>{num}</p>
             <button onClick={onClickSwitchShowFlag}>on/off</button>
             {faceShowFlag && <p> ^^) _旦~~</p>}
-
         </>
     );
 };
