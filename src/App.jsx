@@ -16,10 +16,8 @@ const App = () => {
     useEffect(() => {
         if (num > 0) {
             if (num % 3 === 0) {
-                // avoid too many rerendering
                 faceShowFlag || setFaceShowFlag(true);
             } else {
-                // avoid too many rerendering
                 faceShowFlag && setFaceShowFlag(false);
             }
         } else {
