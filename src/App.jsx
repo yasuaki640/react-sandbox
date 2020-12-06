@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import ColofulMessage from './components/ColofulMessage'
 
 const App = () => {
-    const [num, setNum] = useState(100);
+    console.log("re renderd");
+    const [num, setNum] = useState(0);
     const onClickCountUp = () => {
         setNum(num + 1);
     };
@@ -12,13 +13,19 @@ const App = () => {
         setFaceShowFlag(!faceShowFlag);
     };
 
-    if (num % 3 === 0) {
-        // avoid too many rerendering
-        faceShowFlag || setFaceShowFlag(true);
-    } else {
-        // avoid too many rerendering
-        faceShowFlag && setFaceShowFlag(false);
-    }
+    useEffect(() => {
+        if (num > 0) {
+            if (num % 3 === 0) {
+                // avoid too many rerendering
+                faceShowFlag || setFaceShowFlag(true);
+            } else {
+                // avoid too many rerendering
+                faceShowFlag && setFaceShowFlag(false);
+            }
+        } else {
+            setFaceShowFlag(false);
+        }
+    }, [num]);
 
     return (
         <>
