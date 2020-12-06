@@ -8,7 +8,7 @@ const App = () => {
         setNum(num + 1);
     };
 
-    const [faceShowFlag, setFaceShowFlag] = useState(true);
+    const [faceShowFlag, setFaceShowFlag] = useState(false);
     const onClickSwitchShowFlag = () => {
         setFaceShowFlag(!faceShowFlag);
     };
