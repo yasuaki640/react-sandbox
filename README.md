@@ -1,3 +1,2 @@
-# react-todo-app  
-A simple react todo app. (WIP)  
-This app is made by a udemy cource for learning react.
+# react-sand-box 
+A repo for react learning history.
